@@ -6,35 +6,7 @@
     <title>Minha primeira aplicação</title>
     <!-- <link rel="stylesheet" href="style.css"> -->
      <style>
-        /* body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f0f0f0;
-        }
-        h1 {
-            color: #333;
-        }
-        label {
-            font-weight: bold;
-            border-radius: 10px;
-        }
-        input {
-            padding: 5px;
-            margin-top: 10px;
-            border-radius: 5px;
-        }
-        button {
-            padding: 10px 15px;
-            background-color: #007BFF;
-            color: white;
-            border: 20px;;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        } */
-             /* Reset básico */
+    
     * {
       margin: 0;
       padding: 0;
@@ -92,16 +64,36 @@
      </style>
 </head>
 <body>
-    <h1>Hellto Word Electron!!! </h1>
-
+  <h1>Hellto Word Electron!!! </h1>
+  
     <label for="nome"> Nome: </label>
     <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
     <button id="btnEnviar" onclick="pegarNome()"> Enviar </button>
     <br><br> 
+    
+  
+
+  
     <label for="numero">Digite um numero</label>
     <input type="texto" id="numero" name="numero" placeholder="Digite um numero">
     <button id="Btnumero" onclick="VerificarNumero()" >Verificar</button>
     <br><br>
+
+  
+    <label for="num1">Número 1:</label> 
+    <input type="text" id="num1" name="num1" placeholder="Digite o primeiro número">
+    <label for="num2">Número 2:</label>
+    <input type="text" id="num2" name="num2" placeholder="Digite o segundo número">
+    <button id="btnCalcular" onclick="calcularmedia()">Calcular Média</button>
+    <br><br>  
+
+    <label for="celParFahr">Temperatura em Celsius:</label>
+    <input type="text" id="celParFahr" name="celParFahr" placeholder="Digite a temperatura em Celsius">
+    <button id="btnConverterFahr" onclick="alert(celsiusToFahrenheit(parseFloat(document.getElementById('celParFahr').value)) + '°F')">Converter para Fahrenheit</button>
+    <button id="btnConverterKelvin" onclick="alert(celsiusToKelvin(parseFloat(document.getElementById('celParFahr').value)) + 'K')">Converter para Kelvin</button>
+    <br><br>  
+
+
     <p id="texto"></p>
     <script>
         function pegarNome() {
@@ -113,8 +105,7 @@
 
         } 
         function VerificarNumero() {
-            // const numeroInput = document.getElementById('numero')
-            const numero = Number(document.getElementById('numero').value)
+             const numero = Number(document.getElementById('numero').value)
             if (isNaN(numero)) {
                 alert('Por favor, digite um número válido.');
             } else if (numero >=0) {
@@ -123,7 +114,20 @@
                 alert('O número ' + numero + ' é negativo.');
             }
         }
-        
+        function calcularmedia() {
+            const num1 = parseFloat(document.getElementById('num1').value) * 0.40
+            const num2 = parseFloat(document.getElementById('num2').value) * 0.60
+            if (isNaN(num1) || isNaN(num2)) {
+            }
+            const media = (num1 + num2) / 2;
+            alert('A média entre ' + num1 + ' e ' + num2 + ' é ' + media + '.');
+        }
+        function celsiusToFahrenheit(celsius) {
+            return (celsius * 9/5) + 32;
+        }
+        function celsiusToKelvin(celsius) {
+            return celsius + 273.15;
+        }
     </script>
     <a href="main.js"></a>
 
