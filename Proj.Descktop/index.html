@@ -2,66 +2,8 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha primeira aplicação</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
-     <style>
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(120deg, #ff9a9e, #fad0c4, #fad0c4);
-      background-size: 600% 600%;
-      animation: gradientBG 15s ease infinite;
-      transition: background-color 1s ease;
-    }
-
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    h1 {
-      color: white;
-      font-size: 3rem;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-      transition: transform 0.2s ease;
-    }
-
-    h1:hover {
-      transform: scale(1.1);
-    }
-
-    button {
-      margin-top: 10px;
-      padding: 10px 15px;
-      font-size: 1.0rem;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      background-color: white;
-      color: #333;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    button:hover {
-      background-color: #333;
-      color: rgb(102, 39, 39);
-      transform: scale(1.05);
-    }
-     </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Minha primeira aplicação</title>
+    <link rel="stylesheet" href="Style.css">
 </head>
 <body>
   <h1>Hellto Word Electron!!! </h1>
@@ -70,15 +12,16 @@
     <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
     <button id="btnEnviar" onclick="pegarNome()"> Enviar </button>
     <br><br> 
-    
-  
 
+    <label for="numeroParImpar">Digite um Numero</label>
+    <input type="text" id="numeroParImpar" name="numeroParImpar" placeholder="Digite um numero">
+    <button id="BtnParouImpa" onclick="seEimparouPar()" >Verificar</button>
+    <br><br>  
   
     <label for="numero">Digite um numero</label>
-    <input type="texto" id="numero" name="numero" placeholder="Digite um numero">
+    <input type="text" id="numero" name="numero" placeholder="Digite um numero">
     <button id="Btnumero" onclick="VerificarNumero()" >Verificar</button>
     <br><br>
-
   
     <label for="num1">Número 1:</label> 
     <input type="text" id="num1" name="num1" placeholder="Digite o primeiro número">
@@ -95,41 +38,9 @@
 
 
     <p id="texto"></p>
-    <script>
-        function pegarNome() {
-            const nomeInput = document.getElementById('nome');
-            const nome = nomeInput.value;
-            alert('Olá, ' + nome + '! Bem-vindo à minha primeira aplicação Electron.');
-            document.getElementById('nome').value = '';
-            document.getElementById('texto').innerHTML = 'Olá, ' + nome + '! Bem-vindo à minha primeira aplicação Electron.';
-
-        } 
-        function VerificarNumero() {
-             const numero = Number(document.getElementById('numero').value)
-            if (isNaN(numero)) {
-                alert('Por favor, digite um número válido.');
-            } else if (numero >=0) {
-                alert('O número ' + numero + ' é positivo.');
-            } else {
-                alert('O número ' + numero + ' é negativo.');
-            }
-        }
-        function calcularmedia() {
-            const num1 = parseFloat(document.getElementById('num1').value) * 0.40
-            const num2 = parseFloat(document.getElementById('num2').value) * 0.60
-            if (isNaN(num1) || isNaN(num2)) {
-            }
-            const media = (num1 + num2) / 2;
-            alert('A média entre ' + num1 + ' e ' + num2 + ' é ' + media + '.');
-        }
-        function celsiusToFahrenheit(celsius) {
-            return (celsius * 9/5) + 32;
-        }
-        function celsiusToKelvin(celsius) {
-            return celsius + 273.15;
-        }
-    </script>
-    <a href="main.js"></a>
+ 
+          <a href="main.js"></a>
+    <script src="funcoes.js"></script>
 
 </body>
 </html>
