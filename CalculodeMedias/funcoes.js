@@ -6,7 +6,11 @@ function calculaamedia() {
     const nota3 = parseFloat(document.getElementById("nota3").value);
     const nota4 = parseFloat(document.getElementById("nota4").value);   
     const medias = (nota1 + nota2 + nota3 + nota4) / 4; 
-    document.getElementById("resultadoMedia").innerHTML = (medias);   
+    document.getElementById("resultadoMedia").innerHTML = (medias); 
+    document.getElementById("calculaamedia").addEventListener("click", calculaamedia);
+      
+
+
 
     if (medias >= 7) {
         alert ("Aprovado com média: " + medias)
