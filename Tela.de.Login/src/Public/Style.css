@@ -1,0 +1,118 @@
+/* Estilo geral do corpo */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #4e54c8, #8f94fb, #6dd5fa, #2980b9);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Animação do gradiente de fundo */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Caixa de login */
+#Login {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px;
+    width: 300px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1.5s ease;
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px 0;
+    font-size: 14px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* Botão animado */
+button {
+    width: 150%;
+    padding: 8px;
+    border: none;
+    background-color: #4e54c8;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #6dd5fa;
+    transform: scale(1.08);
+    box-shadow: 0 0 10px #6dd5fa;
+}
+
+h5 {
+    margin-top: 10px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+h5:hover {
+    color: #6dd5fa;
+}
+
+/* Links de login social */
+h3 {
+    font-size: 14px;
+    margin-top: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+h3:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
