@@ -11,19 +11,19 @@ let janela = null; // Variável para armazenar a janela
 function criarJanela() {
   nativeTheme.themeSource = 'light'
   janela = new BrowserWindow({
-    width: 800,
-    height: 800,
+    width: 1920,
+    height: 1080,
     title: 'Tela.de.Login',
     webPreferences: {
       contextIsolation: true,
       nodeIntegration: false,
       devTools: true,
-      preload: path.join(__dirname, 'preload.js'),
+      preload: path.join(__dirname, 'preloadLogin.js'),
       sandbox: false
     }
   })
 
- janela.loadFile(path.join(__dirname, '../indexLogin.html'))
+ janela.loadFile(path.join(__dirname, 'Paginas/indexLogin.html'))
  janela.removeMenu()
 
 
@@ -40,4 +40,24 @@ app.whenReady().then(() => {
     dialog.showMessageBox
     criarJanela()
 
+})
+
+let usuario = []
+
+ipcMain.handle('cadastroLogin',(event, login) => {
+    console.log(`Email: ${login.email}, Senha: ${login.senha}`)
+    usuario.push(login)
+    usuario.forEach((user) => {
+        
+        if(user.email === login.email && user.senha === login.senha){
+          return login.email
+        }
+        dialog.showMessageBox({
+          title: '',
+          type: 'infor',
+          message: ''
+        })
+        
+
+    })
 })
