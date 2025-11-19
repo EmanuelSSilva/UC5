@@ -1,11 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Home - Dashboard</title>
+    <link rel="stylesheet" href="../Public/Style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+
+        #HomeContainer {
+            text-align: center;
+            padding: 40px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            min-width: 400px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .welcome-text {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .btn-home {
+            width: 120px;
+            height: 35px;
+            padding: 8px 15px;
+            font-size: 14px;
+            border: 1px solid #007bff;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            margin: 5px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn-home:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background-color: #545b62;
+        }
+
+        .user-info {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
-    
+    <div id="HomeContainer">
+        <h1>Bem-vindo ao Sistema</h1>
+        <p class="welcome-text">Você está logado com sucesso!</p>
+        
+        <div class="user-info">
+            <p><strong>Usuário:</strong> <span id="userEmail">usuario@email.com</span></p>
+            <p><strong>Último acesso:</strong> <span id="lastLogin">18/11/2025 - 14:30</span></p>
+        </div>
+
+        <div class="actions">
+            <button class="btn-home" onclick="acessarPerfil()">Meu Perfil</button>
+            <button class="btn-home" onclick="configuracoes()">Configurações</button>
+            <button class="btn-home btn-secondary" onclick="logout()">Sair</button>
+        </div>
+    </div>
+
+    <!-- <script src="../Scripts/home.js"></script> -->
+    <!-- <script>
+        function acessarPerfil() {
+            alert('Redirecionando para o perfil...');
+        }
+
+        function configuracoes() {
+            alert('Abrindo configurações...');
+        }
+
+        function logout() {
+            if(confirm('Deseja realmente sair?')) {
+                window.location.href = 'indexLogin.html';
+            }
+        }
+    </script> -->
 </body>
 </html>

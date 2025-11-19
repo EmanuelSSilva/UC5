@@ -44,20 +44,18 @@ app.whenReady().then(() => {
 
 let usuario = []
 
-ipcMain.handle('cadastroLogin',(event, login) => {
-    console.log(`Email: ${login.email}, Senha: ${login.senha}`)
-    usuario.push(login)
-    usuario.forEach((user) => {
-        
-        if(user.email === login.email && user.senha === login.senha){
-          return login.email
-        }
-        dialog.showMessageBox({
-          title: '',
-          type: 'infor',
-          message: ''
-        })
-        
+ipcMain.handle('cadastroLogin',(event, usuario1) => {
+    usuario.push(usuario1)
+    console.log (`dessa vez foi ${usuario1.nome}`)
+  })
 
-    })
-})
+ipcMain.handle('vericarlogin', (event, pessoa) =>{
+  console.log(`Teste do main 1 ${pessoa.email}`)
+  usuario.forEach(user => {
+    if (user.email === pessoa.email && user.senha === pessoa.senha){
+      console.log(`Teste do main 2 ${user.senha}`)
+      return user.email
+    }
+      return
+  })
+})  

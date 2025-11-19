@@ -19,19 +19,6 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* Caixa de login */
-#Login {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 40px;
-    width: 300px;
-    text-align: center;
-    color: #fff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    animation: fadeIn 1.5s ease;
-}
-
 /* Animação de entrada */
 @keyframes fadeIn {
     from {
@@ -44,17 +31,38 @@ body {
     }
 }
 
-h1 {
-    margin-bottom: 20px;
+/* Caixa de login centralizada */
+#Login {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px;
+    width: 300px;
+    max-width: 90vw; /* Responsivo para telas menores */
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1.5s ease;
+    margin: auto; /* Centralização adicional */
 }
 
+/* Títulos centralizados */
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+/* Labels alinhados */
 label {
     display: block;
     text-align: left;
     margin: 10px 0 5px 0;
     font-size: 14px;
+    width: 100%;
 }
 
+/* Inputs centralizados e responsivos */
 input {
     width: 100%;
     padding: 10px;
@@ -64,55 +72,79 @@ input {
     font-size: 14px;
     outline: none;
     transition: all 0.3s ease;
+    box-sizing: border-box; /* Garante que padding não afete a largura */
 }
 
 input:focus {
     background-color: rgba(255, 255, 255, 0.2);
-    transform: scale(1.05);
+    transform: scale(1.02); /* Reduzido para melhor visualização */
 }
 
-/* Botão animado */
+/* Botão centralizado e proporcional */
 button {
-    width: 150%;
-    padding: 8px;
+    width: 100%; /* Já está correto para ocupar toda a largura */
+    padding: 12px;
     border: none;
     background-color: #4e54c8;
     color: #fff;
     border-radius: 20px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 16px;
     transition: all 0.3s ease;
+    margin: 10px auto; /* ADICIONE 'auto' aqui para centralizar */
+    box-sizing: border-box;
+    display: block; /* ADICIONE esta linha para garantir centralização */
 }
 
 button:hover {
     background-color: #6dd5fa;
-    transform: scale(1.08);
-    box-shadow: 0 0 10px #6dd5fa;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(109, 213, 250, 0.5);
 }
 
+/* Links e textos pequenos centralizados */
 h5 {
-    margin-top: 10px;
+    margin-top: 15px;
     font-size: 12px;
     cursor: pointer;
     transition: color 0.3s ease;
+    text-align: center;
 }
 
 h5:hover {
     color: #6dd5fa;
 }
 
-/* Links de login social */
+/* Links de login social centralizados */
 h3 {
     font-size: 13px;
-    margin-top: 15px;
+    margin: 15px 0;
     background: rgba(255, 255, 255, 0.2);
-    padding: 20px;
+    padding: 15px;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-align: center;
 }
 
 h3:hover {
     background: rgba(255, 255, 255, 0.3);
-    transform: scale(1.05);
+    transform: scale(1.02);
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 480px) {
+    #Login {
+        padding: 30px 20px;
+        width: 280px;
+    }
+    
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 20px;
+    }
 }

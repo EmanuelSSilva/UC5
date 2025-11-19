@@ -1,15 +1,16 @@
-document.getElementById('Login').addEventListener('click', () => {
-    const email = document.getElementById('Email').value
-    const senha = document.getElementById('Senha').value
-    alert ("testetestetstet ", email, senha)
-    window.api.cadastro({ email, senha })
-    window.api.cadastro({ email, senha }).then((result) => {
+document.getElementById("Login").addEventListener('click', () =>{
+    alert("1")
+    const userLogin = {
+        email: document.getElementById('Email').value, 
+        senha: document.getElementById('Senha').value, 
+    }
+    window.api.login(userLogin)
+    alert("2")
+    window.api.login(userLogin).then((result) => {
         if(result){
+            alert ("--",result)
             localStorage.setItem('usuario',result)
-            window.location.href = 'Paginas/indexLogin.html'
+            window.location.href = '../Paginas/indexHome.html'
         } 
     }) 
-
-})     
-
-
+})
