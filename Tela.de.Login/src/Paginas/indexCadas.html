@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro - Sistema</title>
     <link rel="stylesheet" href="../Public/Style.css">
-    <script src="../Renderes/rendereCadastro.js" defer></script>
     <style>
         body {
             margin: 0;
@@ -144,7 +143,8 @@
             </div>
 
             <div class="actions">
-                <button type="submit" id="botaocadast" class="btn-cadastro">Cadastrar</button>
+                <button type="submit" id="botaocadast" class="btn-cadastro" <a href="indexLogin.html">
+                </a>Cadastrar</button>
                 <!-- <button type="button" class="btn-voltar" onclick="voltarLogin()">Voltar</button> -->
             </div>
         </form>
@@ -153,57 +153,7 @@
             <p>Já tem uma conta? <a href="indexLogin.html" class="link-login">Faça login</a></p>
         </div>
     </div>
-    <!-- <script>
-        document.getElementById('formCadastro').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const nome = document.getElementById('nome').value;
-            const email = document.getElementById('email').value;
-            const senha = document.getElementById('senha').value;
-            const confirmarSenha = document.getElementById('confirmarSenha').value;
-            
-            // Validações básicas
-            let isValid = true;
-            
-            if (nome.length < 2) {
-                document.getElementById('errorNome').style.display = 'block';
-                isValid = false;
-            } else {
-                document.getElementById('errorNome').style.display = 'none';
-            }
-            
-            if (!email.includes('@')) {
-                document.getElementById('errorEmail').style.display = 'block';
-                isValid = false;
-            } else {
-                document.getElementById('errorEmail').style.display = 'none';
-            }
-            
-            if (senha.length < 6) {
-                document.getElementById('errorSenha').style.display = 'block';
-                isValid = false;
-            } else {
-                document.getElementById('errorSenha').style.display = 'none';
-            }
-            
-            if (senha !== confirmarSenha) {
-                document.getElementById('errorConfirmarSenha').style.display = 'block';
-                isValid = false;
-            } else {
-                document.getElementById('errorConfirmarSenha').style.display = 'none';
-            }
-            
-            if (isValid) {
-                // Aqui você pode enviar os dados para o backend
-                alert('Cadastro realizado com sucesso!');
-                window.location.href = 'indexLogin.html';
-            }
-        });
 
-        function voltarLogin() {
-            window.location.href = 'indexLogin.html';
-        }
-    </script> -->
     <script src="../Renderes/rendereCadastro.js" defer></script>
 </body>
 </html>

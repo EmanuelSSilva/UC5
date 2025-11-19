@@ -5,13 +5,14 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron src/main.js"
+    "start": "electronmon src/main.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "electron": "^39.1.2"
+    "electron": "^39.2.2",
+    "electronmon": "^2.0.4"
   }
 }

@@ -47,15 +47,15 @@ let usuario = []
 ipcMain.handle('cadastroLogin',(event, usuario1) => {
     usuario.push(usuario1)
     console.log (`dessa vez foi ${usuario1.nome}`)
+    return usuario1
   })
 
 ipcMain.handle('vericarlogin', (event, pessoa) =>{
   console.log(`Teste do main 1 ${pessoa.email}`)
-  usuario.forEach(user => {
-    if (user.email === pessoa.email && user.senha === pessoa.senha){
-      console.log(`Teste do main 2 ${user.senha}`)
-      return user.email
-    }
-      return
-  })
-})  
+  const encontrado = usuario.find(user => user.email === pessoa.email && user.senha === pessoa.senha)
+  if (encontrado) {
+    console.log(`Teste do main 2 ${pessoa.senha}`)
+    return encontrado
+  }
+  return null
+})
