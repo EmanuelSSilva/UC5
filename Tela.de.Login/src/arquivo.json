@@ -1,0 +1,31 @@
+{
+  "nome": "Emanuel",
+  "email": "emanue@silva",
+  "senha": "123456",
+  "confirmasenha": "123456"
+}{
+  "nome": "segundo teste",
+  "email": "tes@gmail.com",
+  "senha": "654321",
+  "confirmasenha": "654321"
+}[
+  {
+    "nome": "Emanuel",
+    "email": "emanuel@gmail.com",
+    "senha": "12052621",
+    "confirmasenha": "12052621"
+  }
+][
+  {
+    "nome": "Emanuel",
+    "email": "emanuel@gmail.com",
+    "senha": "12052621",
+    "confirmasenha": "12052621"
+  },
+  {
+    "nome": "teste de Mudança",
+    "email": "teste1@gmail",
+    "senha": "123456",
+    "confirmasenha": "123456"
+  }
+]

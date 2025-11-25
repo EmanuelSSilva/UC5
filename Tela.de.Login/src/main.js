@@ -1,6 +1,8 @@
 import { app, BrowserWindow, nativeTheme, ipcMain, Menu, dialog, Notification } from 'electron';
-import { fileURLToPath } from 'url';
-import path from 'node:path';
+import { fileURLToPath } from 'url'
+import path from 'path'
+import fs from 'fs'
+
 
 
 let __filename = fileURLToPath(import.meta.url);
@@ -9,11 +11,11 @@ let __dirname = path.dirname(__filename);
 let janela = null; // Variável para armazenar a janela
 
 function criarJanela() {
-  nativeTheme.themeSource = 'light'
+  nativeTheme.themeSource = 'dark'
   janela = new BrowserWindow({
-    width: 1920,
-    height: 1080,
     title: 'Tela.de.Login',
+    height: 1080,
+    width: 1920,
     webPreferences: {
       contextIsolation: true,
       nodeIntegration: false,
@@ -38,14 +40,27 @@ app.whenReady().then(() => {
     }).show()
 
     dialog.showMessageBox
+    escreverArq()
     criarJanela()
 
 })
 
+const arquivo = path.join(__dirname,'arquivo.json')
+
 let usuario = []
+
+function escreverArq (usuario){
+    try{
+    fs.appendFileSync(arquivo, JSON.stringify(usuario, null, 2), 'utf-8')
+  //fs.writeFileSync(arquivo, 'escrevendo no arquivo,'utf-8')  criando e esquevendo os danos em arquivo txt
+    }catch(err){
+        console.error(err)
+    }
+}
 
 ipcMain.handle('cadastroLogin',(event, usuario1) => {
     usuario.push(usuario1)
+    escreverArq(usuario)
     console.log (`dessa vez foi ${usuario1.nome}`)
     return usuario1
   })
@@ -59,3 +74,4 @@ ipcMain.handle('vericarlogin', (event, pessoa) =>{
   }
   return null
 })
+
