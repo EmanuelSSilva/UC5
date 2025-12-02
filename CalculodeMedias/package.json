@@ -4,13 +4,43 @@
   "main": "main.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron main.js"
+    "start": "electron-forge start",
+    "make": "electron-forge make",
+    "build": "electron-forge build",
+    "package": "electron-forge package"
   },
-  "author": "",
+  "author": "Desenvolvedor",
   "license": "ISC",
-  "description": "",
+  "description": "Aplicativo para cálculo de médias",
   "dependencies": {
     "electron": "^38.4.0"
+    },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.10.2",
+    "@electron-forge/maker-squirrel": "^7.10.2",
+    "@electron-forge/maker-zip": "^7.10.2",
+    "electron":"39.2.4"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "name": "CalculoDeMedias"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "calculodemedias"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "win32"
+          ]
+        }
+      ]
   }
 }
+}
+
